@@ -1,47 +1,42 @@
 <script lang="ts">
-  import svelteLogo from './assets/svelte.svg'
-  import viteLogo from '/vite.svg'
-  import Counter from './lib/Counter.svelte'
+  const fs = () => {
+    document.documentElement.requestFullscreen()
+  }
 </script>
 
-<main>
+<main on:click={fs}>
   <div>
-    <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-      <img src={viteLogo} class="logo" alt="Vite Logo" />
-    </a>
-    <a href="https://svelte.dev" target="_blank" rel="noreferrer">
-      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
-    </a>
+    <p class="kao">:(</p>
+    <p class="content">Your PC ran into a problem and needs to restart. We're just collecting some error info, and then we'll restart for you.</p>
+    <p class="content">0% complete</p>
+    <p>For more information about this issue and possible fixes, visit our website.</p>
   </div>
-  <h1>Vite + Svelte</h1>
-
-  <div class="card">
-    <Counter />
-  </div>
-
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
-  </p>
-
-  <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
-  </p>
 </main>
 
 <style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
+  main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: #1f67b1;
+    color: white;
+    font-family: sans-serif;
   }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
+
+  main div {
+    padding: 5rem;
   }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
+
+  .kao {
+    font-size: 6rem;
+    margin-bottom: 1rem;
   }
-  .read-the-docs {
-    color: #888;
+
+  p {
+    margin-bottom: 1.5rem;
+  }
+
+  .content {
+    font-size: 1.25rem;
   }
 </style>
